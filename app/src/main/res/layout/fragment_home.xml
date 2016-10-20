@@ -1,0 +1,18 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.akash.applications.myfaceindia.HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:textColor="#cdcdcd"
+        android:textStyle="bold|italic"
+        android:textSize="30sp"
+        android:padding="20dp"
+        android:gravity="center"
+        android:text="Sorry !\n\n\n This section is under development" />
+
+</FrameLayout>

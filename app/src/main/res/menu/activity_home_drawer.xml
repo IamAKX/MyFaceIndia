@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/Home"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Home" />
+        <item
+            android:id="@+id/Notification"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Notification" />
+        <item
+            android:id="@+id/Timeline"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Timeline" />
+        <item
+            android:id="@+id/Chats"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Chats" />
+        <item
+            android:id="@+id/Friends"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Friends" />
+    </group>
+
+    <item android:title="Community">
+        <menu>
+            <item
+                android:id="@+id/CreateGroup"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Create Group" />
+            <item
+                android:id="@+id/Broadcast"
+                android:icon="@android:drawable/stat_notify_error"
+                android:title="Broadcast" />
+
+        </menu>
+    </item>
+    <item android:title="Personal">
+        <menu>
+            <item
+                android:id="@+id/Share"
+                android:icon="@drawable/ic_menu_manage"
+                android:title="Share" />
+            <item
+                android:id="@+id/About"
+                android:icon="@android:drawable/stat_notify_error"
+                android:title="About" />
+            <item
+                android:id="@+id/Footer"
+                android:enabled="false"
+                android:title="MyFaceIndia \u00a9 2016" />
+        </menu>
+    </item>
+
+</menu>
