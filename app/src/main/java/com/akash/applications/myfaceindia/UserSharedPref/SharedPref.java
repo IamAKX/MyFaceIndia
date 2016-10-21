@@ -50,4 +50,9 @@ public class SharedPref {
         SharedPreferences sp = context.getSharedPreferences("UserPref", Activity.MODE_PRIVATE);
         return sp.contains("uname");
     }
+    public void deletePref(Context context)
+    {
+        SharedPreferences sp = context.getSharedPreferences("UserPref", Activity.MODE_PRIVATE);
+       sp.edit().clear().commit();
+    }
 }

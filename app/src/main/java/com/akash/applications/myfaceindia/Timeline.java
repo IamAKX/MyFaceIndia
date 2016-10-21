@@ -12,6 +12,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -38,7 +39,7 @@ import java.util.Map;
 
 public class Timeline extends Fragment {
     EditText postEditText;
-    ImageButton btnSend;
+    ImageView btnSend;
     ArrayList<PostItemText> items;
     public Timeline() {
         // Required empty public constructor
@@ -50,7 +51,7 @@ public class Timeline extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         postEditText = (EditText)getView().findViewById(R.id.etPost);
-        btnSend = (ImageButton)getView().findViewById(R.id.btnSend);
+        btnSend = (ImageView)getView().findViewById(R.id.btnSend);
 
 
         listView = (ListView)getView().findViewById(R.id.listview);
@@ -153,6 +154,7 @@ public class Timeline extends Fragment {
                         if(response.equalsIgnoreCase("success")){
 
                             Toast.makeText(getActivity(), "Post successfully!!", Toast.LENGTH_LONG).show();
+                            postEditText.setText("");
                         }else{
                             //If the server response is not success
                             //Displaying an error message on toast

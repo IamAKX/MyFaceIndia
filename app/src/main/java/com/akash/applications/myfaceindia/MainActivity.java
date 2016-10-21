@@ -14,8 +14,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+
         super.onCreate(savedInstanceState);
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
         t = (TextView)findViewById(R.id.textView2);
         launchNext();
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
                             }
                         });
-                        Thread.sleep(3000);
+                        Thread.sleep(1500);
                         if(x==1)
                             startActivity(new Intent(getBaseContext(), LoginRegister.class));
                         else

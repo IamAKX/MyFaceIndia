@@ -8,58 +8,60 @@
    <LinearLayout
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:padding="16dp"
+
        android:orientation="vertical">
        <RelativeLayout
            android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+           android:elevation="25dp"
+           android:padding="10dp"
+           android:gravity="center_vertical"
+           android:layout_height="75dp">
            <EditText
                android:id="@+id/etPost"
-               android:padding="5dp"
+               android:paddingTop="5dp"
+               android:paddingLeft="5dp"
+               android:paddingBottom="5dp"
                android:layout_width="match_parent"
                android:hint="What's in your mind?"
-               android:background="#00cdcdcd"
-               android:minHeight="50dp"
-               android:inputType="textLongMessage"
-               android:layout_height="wrap_content"
+               android:background="@drawable/edittext_border"
+                android:paddingRight="55dp"
+               android:inputType="textCapSentences|textMultiLine"
+               android:layout_height="match_parent"
                android:layout_marginBottom="5dp"/>
-           <LinearLayout
-               android:layout_below="@+id/etPost"
-               android:layout_width="match_parent"
-               android:layout_height="wrap_content"
-               android:orientation="horizontal"
-               android:gravity="right"
-               >
-                <ImageButton
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:background="#01ffffff"
-                    android:tint="#1343e1"
-                    android:id="@+id/btnImagepost"
-                    android:layout_marginLeft="10dp"
-                    android:src="@android:drawable/ic_menu_camera"/>
-               <ImageButton
+
+
+               <ImageView
                    android:tint="#07ec7a"
                    android:layout_marginLeft="10dp"
                    android:background="#01ffffff"
-                   android:layout_width="50dp"
-                   android:layout_height="50dp"
-                   android:src="@android:drawable/sym_action_chat"
-                   android:id="@+id/btnSend" />
-           </LinearLayout>
+                   android:layout_width="40dp"
+                   android:layout_height="40dp"
+                   android:layout_alignParentRight="true"
+                   android:layout_alignParentBottom="true"
+                   android:src="@drawable/send"
+                   android:id="@+id/btnSend"
+                  android:layout_marginBottom="8dp"/>
+
        </RelativeLayout>
+
        <TextView
            android:layout_width="match_parent"
            android:layout_height="2dp"
            android:background="#cdcdcd"
            />
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:paddingLeft="16dp"
+           android:paddingRight="16dp">
        <ScrollView
            android:layout_marginTop="20dp"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content">
+           android:layout_height="match_parent">
           <LinearLayout
               android:layout_width="match_parent"
-              android:layout_height="wrap_content" android:orientation="vertical">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
               <ListView
                   android:layout_width="match_parent"
                   android:layout_height="wrap_content"
@@ -68,5 +70,6 @@
               </ListView>
           </LinearLayout>
        </ScrollView>
+       </LinearLayout>
    </LinearLayout>
 </FrameLayout>

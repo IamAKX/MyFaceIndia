@@ -1,5 +1,6 @@
 package com.akash.applications.myfaceindia;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -14,11 +15,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.akash.applications.myfaceindia.UserSharedPref.SharedPref;
 
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     FragmentManager fm;
     Home homeObject;
+    private View navHeaderView;
+    private TextView tvEmail,tvName;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,8 +44,15 @@ public class Home extends AppCompatActivity
 
         homeObject = this;
 
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+       NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+/*        navHeaderView = navigationView.inflateHeaderView(R.layout.nav_header_home);
+
+        tvName = (TextView)navHeaderView.findViewById(R.id.myName);
+        tvEmail = (TextView)navHeaderView.findViewById(R.id.myEmail);
+        tvName.setText("Welcome "+new SharedPref().getName(getBaseContext()));
+        tvEmail.setText(new SharedPref().getEmail(getBaseContext()));*/
     }
 
     @Override
@@ -85,6 +100,9 @@ public class Home extends AppCompatActivity
                 getSupportActionBar().setTitle("Timeline");
                 break;
             case R.id.Home:
+                myFragment = new HomeFragment();
+                getSupportActionBar().setTitle("Home");
+                break;
             case R.id.Notification:
             case R.id.Chats:
             case R.id.Friends:
@@ -93,12 +111,18 @@ public class Home extends AppCompatActivity
             case R.id.Share:
             case R.id.About:
             case R.id.Footer:
-                myFragment = new HomeFragment();
+                myFragment = new Friends();
                 getSupportActionBar().setTitle("Under Development");
                 break;
+            /*case R.id.Logout:
+                new SharedPref().deletePref(getBaseContext());
+                Toast.makeText(getBaseContext(),"Successfully logged out!!",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getBaseContext(),MainActivity.class));
+                finish();
+                break;*/
             default:
                 myFragment = new HomeFragment();
-                getSupportActionBar().setTitle("Under Development");
+                getSupportActionBar().setTitle("Home");
                 break;
         }
 
