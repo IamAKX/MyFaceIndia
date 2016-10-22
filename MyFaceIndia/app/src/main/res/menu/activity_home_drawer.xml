@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <item
+        android:id="@+id/HomePage"
+        android:icon="@drawable/creategroup"
+        android:title="Home" />
+        <item
+            android:id="@+id/Profile"
+            android:icon="@drawable/creategroup"
+            android:title="Profile" />
+        <item
+            android:id="@+id/Timeline"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Timeline" />
+
+
+
+    <item android:title="Group">
+        <menu>
+            <item
+                android:id="@+id/CreateGroup"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Create Group" />
+            <item
+                android:id="@+id/MyGroup"
+                android:icon="@drawable/ic_menu_send"
+                android:title="MyGroup" />
+        </menu>
+    </item>
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/Chat"
+                android:title="Chat"/>
+            <item
+                android:id="@+id/Friends"
+                android:title="Friends"/>
+            <item
+                android:id="@+id/Notification"
+                android:title="Notification"/>
+        </menu>
+    </item>
+    <item android:title="Events">
+        <menu>
+                    <item
+                        android:id="@+id/AllEvents"
+                        android:title="All"/>
+                    <item
+                        android:id="@+id/Music"
+                        android:title="Music"/>
+                    <item
+                        android:id="@+id/Picture"
+                        android:title="Picture"/>
+                    <item
+                        android:id="@+id/Video"
+                        android:title="Video"/>
+                    <item
+                        android:id="@+id/Shared"
+                        android:title="Shared"/>
+                    <item
+                        android:id="@+id/Location"
+                        android:title="Location"/>
+                    </menu>
+    </item>
+    <item android:title="General">
+        <menu>
+            <item
+                android:id="@+id/Settings"
+                android:title="Settings" />
+            <item
+                android:id="@+id/Logout"
+                android:title="Logout" />
+            <item
+                android:id="@+id/About"
+                android:title="About" />
+            </menu>
+    </item>
+
+    <item
+        android:id="@+id/Footer"
+        android:enabled="false"
+        android:title="MyFaceIndia \u00a9 2016" />
+
+
+</menu>
