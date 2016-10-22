@@ -16,21 +16,32 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        TextView tv = (TextView)findViewById(R.id.myFaceIndia);
-        Animation anim = AnimationUtils.loadAnimation(getBaseContext(),R.anim.fade_in);
-        launchNext();
-        tv.setAnimation(anim);
+        /*TextView tv = (TextView)findViewById(R.id.myFaceIndia);
+        /*Animation anim = AnimationUtils.loadAnimation(getBaseContext(),R.anim.fade_in);
+       /* launchNext();
+        tv.setAnimation(anim);*/
+
+
+        Thread background = new Thread() {
+
+            public void run() {
+                try {
+                    sleep(2500);
+                    launchNext();
+                } catch (Exception e) {
+                }
+            }
+
+        };
+
+        background.start();
+
     }
 
 
     private void launchNext() {
-        try {
-            Thread.sleep(3000);
-            startActivity(new Intent(getBaseContext(),UserCredential.class));
-            finish();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
 
+        startActivity(new Intent(getBaseContext(),UserCredential.class));
+        finish();
     }
 }

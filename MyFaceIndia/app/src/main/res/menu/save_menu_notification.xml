@@ -9,10 +9,6 @@
         android:title="Save"
         android:orderInCategory="10"
         app:showAsAction="ifRoom" />
-    <item
-        android:id="@+id/Cancel"
-        android:title="Cancel"
-        android:orderInCategory="10"
-        app:showAsAction="ifRoom" />
+
 
 </menu>

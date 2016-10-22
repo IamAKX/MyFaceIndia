@@ -2,12 +2,64 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/themeBackground"
+    android:padding="16dp"
     tools:context="com.akash.applications.myfaceindia.Settings">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+  <ScrollView
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="@drawable/customized_border"
+      >
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+        <TextView
+            android:id="@+id/settingProfileImage"
+            android:gravity="center_vertical"
+            android:padding="15dp"
+            android:textStyle="bold"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:text="Change Profile Image"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="2dp"
+              android:background="#cdcdcd"/>
+          <TextView
+              android:id="@+id/settingNotification"
+              android:gravity="center_vertical"
+              android:padding="15dp"
+              android:textStyle="bold"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:text="Notification"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="2dp"
+              android:background="#cdcdcd"/>
+          <TextView
+              android:id="@+id/settingPrivacy"
+              android:gravity="center_vertical"
+              android:padding="15dp"
+              android:textStyle="bold"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:text="Privacy"/>
+          <TextView
+              android:layout_width="match_parent"
+              android:layout_height="2dp"
+              android:background="#cdcdcd"/>
+          <TextView
+              android:id="@+id/settingPassword"
+              android:gravity="center_vertical"
+              android:padding="15dp"
+              android:textStyle="bold"
+              android:layout_width="match_parent"
+              android:layout_height="50dp"
+              android:text="Change Password"/>
 
+      </LinearLayout>
+  </ScrollView>
 </FrameLayout>

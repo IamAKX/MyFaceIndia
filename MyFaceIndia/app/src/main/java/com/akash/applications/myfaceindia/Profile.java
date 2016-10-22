@@ -1,17 +1,21 @@
 package com.akash.applications.myfaceindia;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Switch;
+import android.widget.Toast;
 
 import HelperPackage.SpinnerData;
 
@@ -26,6 +30,11 @@ public class Profile extends Fragment {
         // Required empty public constructor
     }
 
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setHasOptionsMenu(true);
+    }
 
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
@@ -149,6 +158,22 @@ public class Profile extends Fragment {
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
+       inflater.inflate(R.menu.save_menu,menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        int id= item.getItemId();
+        switch(id)
+        {
+            case R.id.Save:
+                Toast.makeText(getContext(),"Profile is updated",Toast.LENGTH_LONG).show();
+                return true;
+            case R.id.Cancel:
+               startActivity(new Intent(getActivity(),MainPage.class));
+                getActivity().finish();
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

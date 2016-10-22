@@ -22,7 +22,10 @@
         <activity
             android:name=".Home"
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".NotificationSetting" />
+        <activity android:name=".Privacy" />
+        <activity android:name=".Password"></activity>
     </application>
 
 </manifest>
