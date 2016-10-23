@@ -1,6 +1,7 @@
 package com.akash.applications.myfaceindia;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -9,9 +10,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ListView;
 import android.widget.Spinner;
 
+import java.util.ArrayList;
+
 import HelperPackage.SpinnerData;
+import PostAdapter.CustomAdapter;
 
 
 /**
@@ -20,8 +25,20 @@ import HelperPackage.SpinnerData;
 public class Picture extends Fragment {
 
 
-    public Picture() {
-        // Required empty public constructor
+    ListView lv;
+    Context context;
+    ArrayList myList;
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        context=getContext();
+
+        lv=(ListView) getView().findViewById(R.id.listViewAllEvents);
+
+        lv.setAdapter(new CustomAdapter(getActivity().getBaseContext()));
+
     }
 
     @Override

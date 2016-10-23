@@ -16,13 +16,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.activity_main);
-        /*TextView tv = (TextView)findViewById(R.id.myFaceIndia);
-        /*Animation anim = AnimationUtils.loadAnimation(getBaseContext(),R.anim.fade_in);
-       /* launchNext();
-        tv.setAnimation(anim);*/
-
-
-        Thread background = new Thread() {
+       Thread background = new Thread() {
 
             public void run() {
                 try {

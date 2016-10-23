@@ -4,15 +4,15 @@
 
     <item
         android:id="@+id/HomePage"
-        android:icon="@drawable/creategroup"
+        android:icon="@drawable/home"
         android:title="Home" />
         <item
             android:id="@+id/Profile"
-            android:icon="@drawable/creategroup"
+            android:icon="@drawable/profile"
             android:title="Profile" />
         <item
             android:id="@+id/Timeline"
-            android:icon="@drawable/ic_menu_gallery"
+            android:icon="@drawable/timeline"
             android:title="Timeline" />
 
 
@@ -21,11 +21,11 @@
         <menu>
             <item
                 android:id="@+id/CreateGroup"
-                android:icon="@drawable/ic_menu_share"
+                android:icon="@drawable/creategroup"
                 android:title="Create Group" />
             <item
                 android:id="@+id/MyGroup"
-                android:icon="@drawable/ic_menu_send"
+                android:icon="@drawable/group"
                 android:title="MyGroup" />
         </menu>
     </item>
@@ -33,12 +33,15 @@
         <menu>
             <item
                 android:id="@+id/Chat"
+                android:icon="@drawable/chat"
                 android:title="Chat"/>
             <item
                 android:id="@+id/Friends"
+                android:icon="@drawable/friends"
                 android:title="Friends"/>
             <item
                 android:id="@+id/Notification"
+                android:icon="@drawable/notification"
                 android:title="Notification"/>
         </menu>
     </item>
@@ -46,21 +49,27 @@
         <menu>
                     <item
                         android:id="@+id/AllEvents"
+                        android:icon="@drawable/all"
                         android:title="All"/>
                     <item
                         android:id="@+id/Music"
+                        android:icon="@drawable/music"
                         android:title="Music"/>
                     <item
                         android:id="@+id/Picture"
+                        android:icon="@drawable/picture"
                         android:title="Picture"/>
                     <item
                         android:id="@+id/Video"
+                        android:icon="@drawable/video"
                         android:title="Video"/>
                     <item
                         android:id="@+id/Shared"
+                        android:icon="@drawable/shared"
                         android:title="Shared"/>
                     <item
                         android:id="@+id/Location"
+                        android:icon="@drawable/visited"
                         android:title="Location"/>
                     </menu>
     </item>
@@ -68,12 +77,15 @@
         <menu>
             <item
                 android:id="@+id/Settings"
+                android:icon="@drawable/settings"
                 android:title="Settings" />
             <item
                 android:id="@+id/Logout"
+                android:icon="@drawable/logout"
                 android:title="Logout" />
             <item
                 android:id="@+id/About"
+                android:icon="@drawable/about"
                 android:title="About" />
             </menu>
     </item>

@@ -1,11 +1,18 @@
 package com.akash.applications.myfaceindia;
 
 
+import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+
+import java.util.ArrayList;
+
+import PostAdapter.CustomAdapter;
 
 
 /**
@@ -14,8 +21,20 @@ import android.view.ViewGroup;
 public class Shared extends Fragment {
 
 
-    public Shared() {
-        // Required empty public constructor
+    ListView lv;
+    Context context;
+    ArrayList myList;
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+
+        context=getContext();
+
+        lv=(ListView) getView().findViewById(R.id.listViewAllEvents);
+
+        lv.setAdapter(new CustomAdapter(getActivity().getBaseContext()));
+
     }
 
 
