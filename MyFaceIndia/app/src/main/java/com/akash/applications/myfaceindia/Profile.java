@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -25,10 +27,12 @@ import HelperPackage.SpinnerData;
  */
 public class Profile extends Fragment {
 
+    EditText nameET,emailET,cityET,addressET,workET,educationET,blogET,googleET,facebookET,twitterET,bioET;
     Spinner dayS,monthS,yearS,genderS,intrestS,countryS;
     public Profile() {
         // Required empty public constructor
     }
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +43,19 @@ public class Profile extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+
+        nameET = (EditText)getView().findViewById(R.id.profileFullName);
+        emailET = (EditText)getView().findViewById(R.id.profileEmail);
+        cityET = (EditText)getView().findViewById(R.id.profileCity);
+        addressET = (EditText)getView().findViewById(R.id.profileAddress);
+        workET = (EditText)getView().findViewById(R.id.profileWork);
+        educationET = (EditText)getView().findViewById(R.id.profileEducation);
+        blogET = (EditText)getView().findViewById(R.id.profileWebsite);
+        googleET = (EditText)getView().findViewById(R.id.profileGoogle);
+        facebookET = (EditText)getView().findViewById(R.id.profileFacebook);
+        twitterET = (EditText)getView().findViewById(R.id.profileTwitter);
+        bioET = (EditText)getView().findViewById(R.id.profileBio);
+
         dayS = (Spinner)getView().findViewById(R.id.dobDay);
         monthS = (Spinner)getView().findViewById(R.id.dobMonth);
         yearS = (Spinner)getView().findViewById(R.id.dobYear);
@@ -167,13 +184,59 @@ public class Profile extends Fragment {
         switch(id)
         {
             case R.id.Save:
-                Toast.makeText(getContext(),"Profile is updated",Toast.LENGTH_LONG).show();
+                if(checkAllFields())
+                    Toast.makeText(getContext(),"Profile is updated",Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(getContext(),"All fields are required to update profile",Toast.LENGTH_LONG).show();
                 return true;
             case R.id.Cancel:
-               startActivity(new Intent(getActivity(),MainPage.class));
-                getActivity().finish();
+                 startActivity(new Intent(getContext(),Home.class));
+                 getActivity().finish();
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    private boolean checkAllFields() {
+        Log.i("##check"," "+nameET.getText().toString().trim());
+        if(nameET.getText().toString().trim().equals(""))
+        {
+
+            nameET.setError("Enter your name");
+            return false;
+        }
+        else
+        if(emailET.getText().toString().trim().equals(""))
+        {
+            emailET.setError("Enter your email");
+            return false;
+        }
+        else
+        if(cityET.getText().toString().trim().equals(""))
+        {
+            cityET.setError("Enter your city name");
+            return false;
+        }
+        else
+        if(addressET.getText().toString().trim().equals(""))
+        {
+            addressET.setError("Enter your address");
+            return false;
+        }
+
+
+        if(dayS.getSelectedItem().toString().trim().equalsIgnoreCase("Day")||monthS.getSelectedItem().toString().trim().equalsIgnoreCase("Month")||yearS.getSelectedItem().toString().trim().equalsIgnoreCase("Year"))
+        {
+            Toast.makeText(getContext(),"Select a valid date",Toast.LENGTH_LONG).show();
+            return false;
+        }
+        else
+            if(genderS.getSelectedItem().toString().trim().equalsIgnoreCase("No Gender"))
+            {
+                Toast.makeText(getContext(),"Select your gender",Toast.LENGTH_LONG).show();
+                return false;
+            }
+
+        return true;
     }
 }

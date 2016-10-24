@@ -291,7 +291,7 @@
                 android:id="@+id/profileFacebook"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Fac.cebook Link"
+                android:hint="Facebook Link"
                 android:padding="5dp"
 
                 android:inputType="textCapWords"

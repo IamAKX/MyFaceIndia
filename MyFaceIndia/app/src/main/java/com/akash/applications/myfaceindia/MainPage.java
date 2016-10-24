@@ -10,6 +10,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -24,6 +25,9 @@ public class MainPage extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        this.getActivity().getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
+
+
         accessControllImageView = (ImageView) getView().findViewById(R.id.ivMainPageAccessControll);
         arrowiv = (ImageView)getView().findViewById(R.id.hideshowpost);
         final LinearLayout layout = (LinearLayout)getView().findViewById(R.id.postContentLayout);
