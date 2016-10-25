@@ -33,7 +33,17 @@
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".NotificationSetting" />
         <activity android:name=".Privacy" />
-        <activity android:name=".Password"></activity>
+        <activity android:name=".Password" />
+
+        <!--<provider
+            android:authorities="${applicationId}.provider"
+            android:name="android.support.v4.content.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>-->
     </application>
 
 </manifest>

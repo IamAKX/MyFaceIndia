@@ -7,24 +7,21 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.util.Log;
-import android.view.ContextMenu;
-import android.view.MenuInflater;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
+import android.view.ContextMenu;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
-import android.widget.Switch;
 import android.widget.Toast;
 
 import java.io.File;
@@ -32,17 +29,14 @@ import java.io.File;
 public class Home extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private static final int PICK_FROM_CAMERA = 1;
+    private static final int PICK_FROM_GALLERY = 2;
+    private static final int PIC_CROP = 3;
     FragmentManager fm;
     ImageView userProfilePicture;
     private View navHeaderView;
+    private Uri profilePic;
 
-
-    private static final int PICK_FROM_CAMERA = 1;
-    private static final int PICK_FROM_GALLERY = 2;
-    private static final int PIC_CROP = 3 ;
-
-    
-    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -212,7 +206,7 @@ public class Home extends AppCompatActivity
                 return true;
             case R.id.chooseFromGallary:
                 Toast.makeText(getBaseContext(),"Image from gallery",Toast.LENGTH_LONG).show();
-                launchGallary();
+                launchGallery();
                 return true;
 
             default:
@@ -221,18 +215,18 @@ public class Home extends AppCompatActivity
 
     }
 
-    private Uri profilePic;
     private void launchCamera() {
         try{
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
 
-            String imgDirectory = Environment.getExternalStorageDirectory().getAbsolutePath() + "/MyFaceIndia/Media/Images/Profile";
+            String imgDirectory = Environment.getExternalStorageDirectory() + "/MyFaceIndia/Media/Images/Profile";
             File f = new File(imgDirectory);
             if(!f.exists())
                 f.mkdirs();
 
             File imageFile = new File(imgDirectory+"/IMG_"+System.currentTimeMillis()+".jpg");
-            profilePic = Uri.fromFile(imageFile); // convert path to Uri
+            profilePic = Uri.fromFile(imageFile);
+            //Works only for TargetAPI <= 23
             Log.i("Cropping",profilePic.getPath()+" ");
             Log.i("Cropping uri",profilePic+" ");
             takePictureIntent.putExtra( android.provider.MediaStore.EXTRA_OUTPUT, profilePic );
@@ -254,8 +248,8 @@ public class Home extends AppCompatActivity
 
             if(requestCode == PICK_FROM_CAMERA)
             {
-
-                performCrop(data.getData());
+                // performCrop(data.getData());
+                performCrop(profilePic);
             }
             else if(requestCode == PIC_CROP){
 
@@ -302,7 +296,8 @@ public class Home extends AppCompatActivity
         }
 
     }
-      private void launchGallary() {
+
+    private void launchGallery() {
         // TODO Auto-generated method stub
         Intent intent = new Intent(Intent.ACTION_PICK,MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         intent.putExtra("crop", "true");
@@ -318,7 +313,7 @@ public class Home extends AppCompatActivity
                     "Complete action using"), PICK_FROM_GALLERY);
 
         } catch (ActivityNotFoundException e) {
-            Toast.makeText(getBaseContext(),"Unable to launch gallary",Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "Unable to launch gallery", Toast.LENGTH_LONG).show();
         }
 
     }
