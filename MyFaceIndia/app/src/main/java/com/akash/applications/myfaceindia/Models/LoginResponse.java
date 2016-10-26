@@ -1,4 +1,4 @@
-package com.akash.applications.myfaceindia;
+package com.akash.applications.myfaceindia.Models;
 
 /**
  * Created by Amandeep on 10/26/2016.
