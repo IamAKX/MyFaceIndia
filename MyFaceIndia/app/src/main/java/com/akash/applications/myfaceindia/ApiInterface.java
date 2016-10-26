@@ -1,7 +1,6 @@
 package com.akash.applications.myfaceindia;
 
-import android.net.Uri;
-
+import com.akash.applications.myfaceindia.Models.CaptchaResponse;
 import com.akash.applications.myfaceindia.Models.LoginResponse;
 import com.akash.applications.myfaceindia.Models.RegisterResponse;
 
@@ -37,5 +36,8 @@ interface ApiInterface {
 
 
     @GET("get-captcha-query")
-    Call<Uri> getCaptcha();
+    Call<CaptchaResponse> getCaptcha();
+
+    @POST("on-password-forget-query")
+    Call<String> getOnPasswordForgetResponse(@Query("username") String username);
 }

@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"
     android:background="@color/themeBackground"
+    android:padding="16dp"
     tools:context="com.akash.applications.myfaceindia.Register">
 
     <ScrollView
@@ -16,84 +16,86 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="2dp"
                 android:text="Create an account"
-                android:textStyle="bold"
-                android:textSize="16sp"
                 android:textColor="#616161"
-                android:layout_marginBottom="2dp"/>
+                android:textSize="16sp"
+                android:textStyle="bold" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
-                android:background="#cdcdcd"
-                android:layout_marginBottom="20dp"/>
+                android:layout_marginBottom="20dp"
+                android:background="#cdcdcd" />
             <EditText
                 android:id="@+id/regUserName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="User name"
-                android:padding="5dp"
-
-                android:inputType="textCapWords"
-                android:textSize="20sp"
-                android:textColorHint="#aaaaaa"
+                android:layout_marginBottom="25dp"
                 android:background="@drawable/customized_border"
-                android:layout_marginBottom="25dp"/>
+
+                android:hint="User name"
+                android:inputType="textCapWords"
+                android:padding="5dp"
+                android:textColorHint="#aaaaaa"
+                android:textSize="20sp" />
             <EditText
                 android:id="@+id/regPassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:padding="5dp"
-                android:inputType="textPassword"
-                android:textSize="20sp"
-                android:textColorHint="#aaaaaa"
+                android:layout_marginBottom="25dp"
                 android:background="@drawable/customized_border"
-                android:layout_marginBottom="25dp"/>
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:padding="5dp"
+                android:textColorHint="#aaaaaa"
+                android:textSize="20sp" />
             <EditText
                 android:id="@+id/regEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
-                android:padding="5dp"
-                android:inputType="textEmailAddress"
-                android:textSize="20sp"
-                android:textColorHint="#aaaaaa"
                 android:background="@drawable/customized_border"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:padding="5dp"
+                android:textColorHint="#aaaaaa"
+                android:textSize="20sp"
                 />
             <ImageView
+                android:id="@+id/captcha_imageview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="15dp"
                 android:maxHeight="80dp"
-                android:src="@drawable/captcha"
-                android:layout_margin="15dp"/>
+                android:src="@drawable/captcha" />
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="Enter the above captcha"
                 android:textColor="#aaaaaa"
-                android:textSize="16sp"
-                android:layout_marginBottom="10dp"/>
+                android:textSize="16sp" />
             <EditText
                 android:id="@+id/regCaptcha"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Captcha"
-                android:padding="5dp"
-                android:inputType="textCapWords"
-                android:textSize="20sp"
-                android:textColorHint="#aaaaaa"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/customized_border"
-                android:layout_marginBottom="15dp"/>
+                android:hint="Captcha"
+                android:inputType="textCapWords"
+                android:padding="5dp"
+                android:textColorHint="#aaaaaa"
+                android:textSize="20sp" />
             <Button
+                android:id="@+id/reg_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp"
+                android:background="#58AA16"
+                android:elevation="30dp"
                 android:text="Register"
                 android:textColor="#ffffff"
-                android:textStyle="bold"
-                android:elevation="30dp"
                 android:textSize="20sp"
-                android:layout_marginBottom="50dp"
-                android:background="#58AA16"/>
+                android:textStyle="bold" />
                 </LinearLayout>
     </ScrollView>
 
