@@ -1,0 +1,342 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/themeBackground"
+    tools:context="com.akash.applications.myfaceindia.Profile">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Personal Details"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                android:layout_marginBottom="2dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#cdcdcd"
+                android:layout_marginBottom="20dp"/>
+            <EditText
+
+                android:id="@+id/profileFullName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Full name"
+                android:padding="5dp"
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <EditText
+                android:id="@+id/profileEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:layout_marginBottom="25dp"
+                android:padding="5dp"
+                android:inputType="textEmailAddress"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/customized_border"
+                >
+                <TextView
+                    android:textColor="@color/hint"
+                    android:layout_marginBottom="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date of Birth"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+
+                >
+
+
+                <Spinner
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/dobDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></Spinner>
+                <Spinner
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/dobMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></Spinner>
+                <Spinner
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/dobYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"></Spinner>
+            </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/customized_border"
+                >
+                <TextView
+                    android:textColor="@color/hint"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Gender"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+
+
+                    <Spinner
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/Gender"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></Spinner>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/customized_border"
+                >
+                <TextView
+                    android:textColor="@color/hint"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Intrest"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+
+
+                    <Spinner
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/Intrest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></Spinner>
+
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:paddingBottom="15dp"
+                android:paddingTop="5dp"
+                android:layout_marginBottom="25dp"
+                android:background="@drawable/customized_border"
+                >
+                <TextView
+                    android:textColor="@color/hint"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Country you live in"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+
+                    >
+
+
+                    <Spinner
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/Country"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"></Spinner>
+
+                </LinearLayout>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/profileCity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="City"
+                android:padding="5dp"
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <EditText
+                android:id="@+id/profileAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Address"
+                android:padding="5dp"
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Other Details"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                android:layout_marginBottom="2dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#cdcdcd"
+                android:layout_marginBottom="20dp"/>
+            <EditText
+                android:id="@+id/profileWork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Work Place"
+                android:padding="5dp"
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <EditText
+                android:id="@+id/profileEducation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Education"
+                android:padding="5dp"
+
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <EditText
+                android:id="@+id/profileWebsite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Blog or Website"
+                android:padding="5dp"
+                android:inputType="textUri"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Social Websites"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                android:layout_marginBottom="2dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#cdcdcd"
+                android:layout_marginBottom="20dp"/>
+            <EditText
+                android:id="@+id/profileGoogle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Google+ Link "
+                android:padding="5dp"
+
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <EditText
+                android:id="@+id/profileFacebook"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Facebook Link"
+                android:padding="5dp"
+
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <EditText
+                android:id="@+id/profileTwitter"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Twitter"
+                android:padding="5dp"
+
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Bio"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="#616161"
+                android:layout_marginBottom="2dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#cdcdcd"
+                android:layout_marginBottom="20dp"/>
+            <EditText
+                android:id="@+id/profileBio"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:hint="Something about you in 160 characters"
+                android:padding="5dp"
+                android:gravity="start"
+                android:inputType="textCapWords"
+                android:textSize="20sp"
+                android:textColorHint="#aaaaaa"
+                android:background="@drawable/customized_border"
+                android:layout_marginBottom="25dp"/>
+
+        </LinearLayout>
+    </ScrollView>
+</FrameLayout>
