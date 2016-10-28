@@ -39,6 +39,7 @@
                 android:background="#cdcdcd"
                 android:layout_marginBottom="5dp"/>
             <EditText
+                android:id="@+id/timelineEditText"
                 android:layout_width="match_parent"
                 android:layout_height="70dp"
                 android:hint="Update your status"
@@ -79,6 +80,7 @@
                     android:gravity="right">
 
                     <TextView
+                        android:id="@+id/timelinePostButton"
                         android:layout_marginRight="10dp"
                         android:layout_marginLeft="10dp"
                         android:layout_width="wrap_content"
@@ -97,6 +99,7 @@
         </LinearLayout>
         <LinearLayout
             android:layout_below="@+id/statusForm"
+            android:clickable="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
@@ -111,26 +114,28 @@
                 android:text="Timeline"/>
             <TextView
                 android:layout_width="match_parent"
-                android:layout_height="2dp"
-                android:background="#cdcdcd"
+                android:layout_height="1dp"
+                android:background="#f9363739"
                 android:layout_marginBottom="5dp"
                 />
-            <ScrollView
+            <android.support.v4.widget.SwipeRefreshLayout
+                android:id="@+id/timeline_swipe_refresh_layout"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                >
-                <LinearLayout
+                android:descendantFocusability="beforeDescendants"
+                android:layout_height="wrap_content">
+
+                <ListView
+                    android:id="@+id/timeline_listview"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:divider="#00ffffff"
+                    android:dividerHeight="10dp"
+                    >
+                </ListView>
 
-                    <ListView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/listView" />
-                </LinearLayout>
-            </ScrollView>
-
+            </android.support.v4.widget.SwipeRefreshLayout>
 
         </LinearLayout>
 

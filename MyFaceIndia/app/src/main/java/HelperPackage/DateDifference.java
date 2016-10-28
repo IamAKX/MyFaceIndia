@@ -1,5 +1,6 @@
 package HelperPackage;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -11,7 +12,7 @@ import java.util.Date;
 public class DateDifference
 
 {
-    public String timeNow()
+    public static String timeNow()
     {
         Calendar c = Calendar.getInstance();
         SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -20,7 +21,7 @@ public class DateDifference
     }
 
 
-    public String dateDifference(Date d1, Date d2)
+    public static String dateDifference(Date d1, Date d2)
     {
 
 
@@ -65,7 +66,19 @@ public class DateDifference
             return s;
         }
         else
-            return "Posted" +diffSeconds+" second ago";
+            return "Posted " +diffSeconds+" second ago";
 
+    }
+
+    public static Date stringToDate(String s)
+    {
+        SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date d = null;
+        try {
+            d=df.parse(s);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return d;
     }
 }

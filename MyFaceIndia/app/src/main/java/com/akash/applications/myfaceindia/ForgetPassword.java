@@ -1,6 +1,7 @@
 package com.akash.applications.myfaceindia;
 
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -43,7 +44,7 @@ public class ForgetPassword extends Fragment {
 
     EditText username;
     Button buttonForget;
-    ProgressDialog progressDialog;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -86,64 +87,7 @@ public class ForgetPassword extends Fragment {
         @Override
         protected void onPostExecute(Void aVoid) {
             super.onPostExecute(aVoid);
-            progressDialog = new ProgressDialog(getActivity());
-            progressDialog.setCancelable(false);
-            progressDialog.setIndeterminate(false);
 
-            switch (flag)
-            {
-                case 1:
-                    progressDialog.setMessage("Your password is sent to your email inbox. Do you want to check it now");
-
-                    progressDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, "No", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            username.setText("");
-                            progressDialog.dismiss();
-                        }
-                    });
-                    progressDialog.setButton(ProgressDialog.BUTTON_POSITIVE, "Yes", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            username.setText("");
-                            progressDialog.dismiss();
-                            Intent intent = new Intent(Intent.ACTION_MAIN);
-                            intent.addCategory(Intent.CATEGORY_APP_EMAIL);
-                            getActivity().startActivity(intent);
-                        }
-                    });
-                    progressDialog.show();
-                    buttonForget.setText("RECOVER");
-                    break;
-                case 2:
-                    progressDialog.setMessage("No user registered with this email.");
-
-                    progressDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, "Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            username.setText("");
-                            progressDialog.dismiss();
-                        }
-                    });
-                    progressDialog.show();
-                    buttonForget.setText("RECOVER");
-                    break;
-                case 3:
-
-                    progressDialog.setMessage("We are face server error. Try again after some time.");
-
-                    progressDialog.setButton(ProgressDialog.BUTTON_NEGATIVE, "Ok", new DialogInterface.OnClickListener() {
-                        @Override
-                        public void onClick(DialogInterface dialog, int which) {
-                            username.setText("");
-                            progressDialog.dismiss();
-                        }
-                    });
-                    progressDialog.show();
-                    buttonForget.setText("RECOVER");
-                    break;
-
-            }
         }
     }
 
@@ -162,6 +106,72 @@ public class ForgetPassword extends Fragment {
                                 flag=2;
                             else
                                 flag=3;
+
+
+                        //----------------------Testing server response-------------------------------
+
+                        final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                        switch (flag)
+                        {
+                            case 1:
+
+                                builder.setTitle("Password recovered");
+                                builder.setMessage("Your password is sent to your email inbox. Do you want to check it now");
+                                builder.setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        username.setText("");
+                                        dialog.dismiss();
+                                        Intent intent = new Intent(Intent.ACTION_MAIN);
+                                        intent.addCategory(Intent.CATEGORY_APP_EMAIL);
+                                        getActivity().startActivity(intent);
+                                    }
+                                });
+                                builder.setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        username.setText("");
+                                        dialog.dismiss();
+                                    }
+                                });
+
+                                AlertDialog alert = builder.create();
+                                alert.show();
+
+                                buttonForget.setText("RECOVER");
+                                break;
+                            case 2:
+                                builder.setTitle("Unregistered email");
+                                builder.setMessage("No user registered with this email.");
+                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        username.setText("");
+                                        dialog.dismiss();
+
+                                    }
+                                });
+                                AlertDialog alertt = builder.create();
+                                alertt.show();
+
+                                buttonForget.setText("RECOVER");
+                                break;
+                            case 3:
+
+                                builder.setTitle("Server unreachable");
+                                builder.setMessage("We are face server error. Try again after some time.");
+                                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        username.setText("");
+                                        dialog.dismiss();
+
+                                    }
+                                });
+                                AlertDialog alerttt = builder.create();
+                                alerttt.show();
+
+                                buttonForget.setText("RECOVER");
+                                break;
+                        }
+
+                        //--------------------------------------------------------------------------
 
                     }
                 },

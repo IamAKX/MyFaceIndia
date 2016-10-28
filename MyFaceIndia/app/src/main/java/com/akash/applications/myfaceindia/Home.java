@@ -208,7 +208,20 @@ public class Home extends AppCompatActivity
     public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
         super.onCreateContextMenu(menu, v, menuInfo);
         MenuInflater menuInflater = getMenuInflater();
+        Log.i("viewTesting","userdp"+v.toString()+"        "+v.getId());
         menuInflater.inflate(R.menu.navheader_change_profileimage,menu);
+    }
+
+    @Override
+    protected void onPause() {
+        unregisterForContextMenu(userProfilePicture);
+        super.onPause();
+    }
+
+    @Override
+    protected void onResume() {
+        registerForContextMenu(userProfilePicture);
+        super.onResume();
     }
 
     @Override
