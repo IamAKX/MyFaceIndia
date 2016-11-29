@@ -1,0 +1,79 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.akash.applications.myfaceindia.Video"
+    android:background="@color/themeBackground"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
+        <RelativeLayout
+            android:background="@drawable/customized_border"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:elevation="16dp">
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="8dp"
+                android:paddingRight="5dp"
+                android:background="#ffffff"
+                android:paddingBottom="8dp"
+                android:hint="Video name"
+                android:id="@+id/event_video_name"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#cdcdcd"
+                android:id="@+id/border"
+                android:layout_below="@+id/event_video_name"/>
+            <EditText
+                android:layout_below="@+id/border"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:paddingTop="8dp"
+                android:background="#ffffff"
+                android:paddingRight="30dp"
+                android:paddingBottom="8dp"
+                android:hint="Video Link"
+
+                android:id="@+id/event_video_link"/>
+            <TextView
+                android:layout_below="@+id/border"
+                android:layout_alignRight="@+id/event_video_link"
+                android:id="@+id/video_event_post_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:maxHeight="25dp"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/customized_border"
+                android:paddingBottom="5dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="5dp"
+                android:text="POST"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/video_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="vertical"
+            tools:listitem="@layout/event_item" >
+
+        </android.support.v7.widget.RecyclerView>
+    </LinearLayout>
+
+
+
+</FrameLayout>

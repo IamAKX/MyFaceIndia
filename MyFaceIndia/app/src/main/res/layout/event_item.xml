@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/customized_border_post"
+    android:layout_height="wrap_content"
+    android:padding="2dp"
+    android:layout_marginTop="5dp"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <ImageView
+            android:layout_gravity="center_vertical"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_margin="5dp"
+            android:src="@drawable/userprofilepic"
+            android:id="@+id/event_userdp"/>
+        <TextView
+            android:id="@+id/event_uname"
+            android:background="#ffffff"
+            android:layout_gravity="bottom"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username"
+            android:textStyle="bold"
+            android:textSize="17sp"
+            android:layout_marginLeft="5dp"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cdcdcd"
+        />
+    <TextView
+        android:id="@+id/event_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="I am in kolkata"
+        android:textSize="20sp"
+        android:padding="8dp"
+        android:textStyle="bold|italic"
+        android:background="#ffffff"/>
+    <LinearLayout
+        android:id="@+id/event_url_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="gone">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="#cdcdcd"
+            />
+        <TextView
+            android:id="@+id/event_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="http://www.google.com"
+            android:padding="8dp"
+            />
+        </LinearLayout>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#cdcdcd"
+        />
+    <RelativeLayout
+        android:background="#ffffff"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end">
+        <TextView
+            android:id="@+id/event_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="posted 3 hous ago"
+            android:layout_margin="5dp"
+            android:paddingRight="10sp"/>
+    </RelativeLayout>
+</LinearLayout>

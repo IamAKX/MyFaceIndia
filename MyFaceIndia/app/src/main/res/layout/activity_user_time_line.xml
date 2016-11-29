@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_user_time_line"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/themeBackground"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.akash.applications.myfaceindia.UserTimeLine">
+
+    <ImageView
+        android:id="@+id/userTimelineUserImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/customized_border"
+        android:maxHeight="80dp"
+        android:maxWidth="80dp"
+        android:src="@drawable/userprofilepic"
+        />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Timeline"
+        android:textColor="@color/hint"
+        android:textStyle="bold" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:background="#cdcdcd" />
+    <TextView
+        android:id="@+id/textViewPromptNoStatus"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:gravity="center"
+        android:text="User have not posted any status yet!!"
+        android:textColor="#aaaaaa"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone"/>
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/user_timeline_swipe_refresh_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:descendantFocusability="beforeDescendants">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/user_timeline_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#00ffffff"
+            android:dividerHeight="10dp"
+            android:paddingLeft="6dp"
+            android:paddingRight="6dp"
+            ></android.support.v7.widget.RecyclerView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+</LinearLayout>
